@@ -211,10 +211,16 @@ ControlPickerMenu::ControlPickerMenu(QWidget* pParent)
     addDeckAndSamplerControl("beats_adjust_slower", tr("Adjust Beatgrid Slower -.01"), tr("Decrease track's average BPM by 0.01"), bpmMenu);
     addDeckAndSamplerControl("beats_translate_earlier", tr("Move Beatgrid Earlier"), tr("Adjust the beatgrid to the left"), bpmMenu);
     addDeckAndSamplerControl("beats_translate_later", tr("Move Beatgrid Later"), tr("Adjust the beatgrid to the right"), bpmMenu);
+    addDeckAndSamplerControl("beats_translate_half_earlier", 
+        tr("Move Beatgrid Half Beat Earlier"), 
+        tr("Adjust the beatgrid by a half a beat to the left"),
+        bpmMenu);
     addDeckControl("beats_translate_curpos", tr("Adjust Beatgrid"),
                    tr("Align beatgrid to current position"), bpmMenu);
-    addDeckControl("beats_translate_match_alignment", tr("Adjust Beatgrid - Match Alignment"),
-                   tr("Adjust beatgrid to match another playing deck."), bpmMenu);
+    addDeckControl("beats_translate_match_alignment",
+            tr("Adjust Beatgrid - Match Alignment"),
+            tr("Adjust beatgrid to match another playing deck."),
+            bpmMenu);
     bpmMenu->addSeparator();
     addDeckAndSamplerControl("quantize", tr("Quantize Mode"), tr("Toggle quantize mode"), bpmMenu);
 
