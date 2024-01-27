@@ -93,6 +93,10 @@ BpmControl::BpmControl(const QString& group,
             this,
             &BpmControl::slotTranslateBeatsMove,
             Qt::DirectConnection);
+    m_pTranslateBeatsHalfBeatEarlier = new ControlPushButton(ConfigKey(group, "beats_translate_half_earlier"), false);
+    connect(m_pTranslateBeatsHalfBeatEarlier, &ControlObject::valueChanged,
+            this, &BpmControl::slotTranslateBeatsEarlier,
+            Qt::DirectConnection);
 
     // Pick a wide range (kBpmRangeMin to kBpmRangeMax) and allow out of bounds sets. This lets you
     // map a soft-takeover MIDI knob to the BPM. This also creates bpm_up and
